@@ -1,0 +1,322 @@
+FlexDocs Documentos Eletrônicos
+
+DLL de utilidades da NF-e - NFe_Util_2G_v4.11a (C) 2008-2021 - Todos os direitos reservados
+
+Vide guia on-line, disponível em www.flexdocs.com.br/guiaNFe
+
+*** IMPORTANTE ****
+
+As assinaturas das funcionalidades foram alteradas com acréscimo de novos parâmetros e relocação de outros.
+A estrutura das pastas foi alterada, vide a seguir.
+
+2021-07-19 v4.11a
+
+  . implementação da NT 2020/005 - continuação
+
+    string DI310(string nDI, string dDi, string xLocDesemb, string UFDesemb, string dDesemb, int tpViaTransp, double vAFRMM_Opc, int tpIntermedio, string CNPJ_Opc, string UFTerceiro_Opc, string cExportador, string adi)
+
+    - nDI -> 15 posições
+
+    string adi310(int nAdicao_Opc, int nSeqAdic, string cFabricante, double vDescDI_Opc, string nDraw_Opc)
+
+    - nDraw_Opc -> 20 posições
+    - nAdicao_Opc -> não gerar quando = 0
+
+   string detExport(string nDraw_Opc, string nRE, string chNFe, string qExport)
+
+    - nDraw_Opc -> 20 posições
+
+2021-07-11 v4.11
+
+  . implementação da NT 2020/005
+
+     string produto400(string cProd, string cEAN, string xProd, string NCM, string NVE_Opc, string CEST_Opc, string indEscala_Opc, string CNPJFab_Opc, string cBenef_Opc, string EXTIPI_Opc, int CFOP, string uCom, string qCom, string vUnCom, double vProd, string cEANTrib, string uTrib, string qTrib, string vUnTrib, double vFrete, double vSeg, double vDesc, double vOutro, int indTot, string DI_Opc, string detExport_Opc, string DetEspecifico_Opc, string xPed_Opc, string nItemPed_Opc, string nFCI_Opc, string rastro_Opc)
+
+     string produto400VFP(string cProd, string cEAN, string xProd, string NCM, string NVE_Opc, string CEST_Opc, string EXTIPI_Opc, int CFOP, string uCom, string qCom, string vUnCom, double vProd, string cEANTrib, string uTrib, string qTrib, string vUnTrib, double vFrete, double vSeg, double vDesc, double vOutro, int indTot, string DI_Opc, string detExport_Opc, string DetEspecifico_Opc, string xPed_Opc, string nItemPed_Opc, string camposV400)
+
+     string icmsNT2020005(string orig, string CST, int modBC, double pRedBC, double vBC, double pICMS, double vICMS, int modBCST, double pMVAST, double pRedBCST, double vBCST, double pICMSST, double vICMSST, double vBCSTRet, double vICMSSRet, double vBCSTDest, double vICMSSTDest, int motDesICMS, double pBCOp, string UFST, double pCredSN, double vCredICMSSN, double vICMSDeson, double vICMSOp, double pDif, double vICMSDif, double vBCFCP, double pFCP, double vFCP, double vBCFCPST, double pFCPST, double vFCPST, double vBCFCPSTRet, double pFCPSTRet, double vFCPSTRet, double pST, double pFCPDif, double vFCPDif, double vFCPEfet, double vICMSSTDeson, int motDesICMSST)
+
+     string icms400VFP(string orig, string CST, int modBC, double pRedBC, double vBC, double pICMS, double vICMS, int modBCST, double pMVAST, double pRedBCST, double vBCST, double pICMSST, double vICMSST, double vBCSTRet, double vICMSSTRet, double vBCICMSSTDest, double vICMSSTDest, int motDesICMS, double pBCOp, string UFST, double pCredSN, double vCredICMSSN, double vICMSDeson, double vICMSOp, double pDif, double vICMSDif, string camposV400)
+
+     camposv400 = "vBCFCP | pFCP | vFCP | vBCFCPST | pFCPST | vFCPST | vBCFCPSTRet | pFCPSTRet | vFCPSTRet | pST |pFCPDif | vFCPDif | vFCPEfet | vICMSSTDeson | motDesICMSST"
+
+     string PISSTNT2020005(double vBC, double pPIS, double vPIS, double qBCProd, double vAliqProd, int indSomaPISST)
+
+     string COFINSSTNT2020005(double vBC, double pCOFINS, double vCOFINS, double qBCProd, double vAliqProd, int indSomaCOFINSST)
+
+
+2021-06-26
+
+. evento cancelamento do comprovante de entrega, alteração da literal da descrição do evento
+
+2021-05-31
+
+. evento comprovante de entrega
+
+  string EnviaCENFE(string siglaWS, int tipoAmbiente, string nomeCertificado, string versao, out string msgDados, out string msgRetWS, out int cStat, out string msgResultado, string chaveNFe, string dhEvento, int nroCENFe, string verAplic, string dhEntrega, string nDoc, string xNome, double latGPS, double longGPS, string hashComprovante, string dhHashComprovante, out string nProtocolo, out string dProtocolo, string proxy, string usuario, string senha, string licenca)
+
+. calcula hash sha1 de um texto e retorna string base64
+
+  string calcSha1(string texto)
+
+. evento cancelamento do comprovante de entrega
+
+  string EnviaCancCENFe(string siglaWS, int tipoAmbiente, string nomeCertificado, string versao, out string msgDados, out string msgRetWS, out int cStat, out string msgResultado, string chaveNFe, string dhEvento, int nroCancCE, string verAplic, string nProtEvento, out string nProtocolo, out string dProtocolo, string proxy, string usuario, string senha, string licenca)
+
+ 2021-05-18
+
+. BuscaGNRE - alteração para gerar a tag incluirPDFGuias quando a versão informada terminar com a literal PDF, ex.: 1.00PDF, 2.00PDF, etc.
+
+ 2021-04-21
+
+. acréscimo da tag xPag grupo informações do pagamento que deverá ser informado quando tPag=99
+
+  string detPag202006(string indPag_Opc, string tPag, string xPag_Opc, double vPag, string tpIntegra_Opc, string CNPJ_Opc, string tBand_Opc, string cAut_Opc) 
+
+ 2021-02-21
+
+. alterado para gerar a tag indIntermed do grupo ide somente quando indPres = 1, 2, 3, 4 ou 9
+
+ 2021-02-17
+
+ . alterado para gerar a tag indIntermed do grupo ide somente quando indPres = 2, 3, 4 ou 9
+
+ 2021-02-01
+
+
+1 - indIntermed - acréscimo da tag indIntermed no grupo ide
+
+    string identificador202006(int cUF, int cNF, string natOp, int mod, int serie, int nNF, string dhEmi, string dhSaiEnt, int tpNF, int idDest, string cMunFG, string NFref_Opc, int tpImp, int tpEmis, int cDV, int tpAmb, int finNFe, int indFinal, int indPres, int procEmi, string verProc, string dhCont_Opc, string xJust_Opc, int indIntermed_Opc)
+
+2 - infIntermed - acréscimo do grupo infIntermed
+
+    string infIntermed(string CNPJ, string idCadIntTran);
+
+3 - infIntermed - acréscimo do grupo infIntermed no grupo 
+    
+    string NFe202006(string versao, string Id, string ide, string emit, string avulsa_Opc, string dest_Opc, string retirada_Opc, string entrega_Opc, string detalhes, string total, string transp, string cobr_Opc, string pag_Opc, string infAdic_Opc, string exporta_Opc, string compra_Opc, string cana_Opc, string autXML_Opc, string infRespTec_Opc, string infIntermed_Opc)
+
+4 - Evento Ator Interessado
+
+ string EnviaAtorInter(string siglaWS, int tipoAmbiente, string nomeCertificado, string versao, out string msgDados, out string msgRetWS, out int cStat, out string msgResultado, string chaveNFe, string CNPJAutor, string dhEvento, string cOrgaoAutor, int tpAutor, string verAplic, string CNPJCPFAutorizado, int tpAutorizacao, int nroSeqEvento, out string nroProtocolo, out string dhProtocolo, string proxy, string usuario, string senha, string licenca)
+
+
+ 2020-12-16
+
+1 - atualização da url do WS de upload de NF-e do WallMart Nordeste
+
+ 2020-11-23
+
+1 - alteração para tratar a situação de uTrib <> uCom e qTrib = qCom
+
+ 2020-06-01
+
+1 - alteração para não gerar a CPF vazia quando não for informado nem CNPJ e CPF no localRetiradaNT201805 e localEntregaNT201805
+
+ 2020-03-10
+
+1 - tratamento para evitar cNF seja igual ao nNF e cause rejeicao 897 no criaChaveNF2G
+
+ 2020-02-12
+
+1 - Mostrar o ano com quatro dígitos para duplicatas com valor menor que R$ 1 milhão
+
+ 2019-12-07
+
+1 -  Mostrar dezenas da nota premiada do MS - quebra de linha
+
+ 2019-12-07
+
+1 - Mostrar dezenas da nota premiada do MS
+
+
+ 2019-09-09
+
+1 - tratamento para evitar cNF que cause rejeicao 897
+
+2019-07-04
+
+1 - alteração para tratar CPF que vale como CNPJ ao acrescentar 000 à esquerda.
+
+2019-05-27
+
+1 - correção da validação da licença de EnviaPrestDesacordo
+
+2019-04-12
+
+1 - correção da validação da licença de emissor PF (CPF) no EnviaLoteV3
+
+2019-03-27
+
+1 - alteração para ignorar o erro na recuperação do CNPJ/CPF (6004 - Erro: Certificado selecionado não tem CNPJ/CPF) no enviaNFe2G e EnviaNFSincrono
+
+2019-03-15
+
+1 - alteração na regra de geração das tags pST e vICMSSubstituto no grupo ICMSST quando CST=S41 ou CST=S60 no icmsEfetNT201805 conforme alteração da NT2018/005-v1.20
+
+
+2019-03-13
+
+1 - correção para sempre gerar as tag vBCSTDest e vICMSSTDest no grupo ICMSST quando CST=S41 ou CST=S60 no icmsEfetNT201805
+
+2 - correção para gerar a tag cPais com até quatro dígitos
+
+3 - correção para sempre gerar as tags vBCSTRet, pST, vICMSSubstituto e vICMSSTRet no grupo ICMSST quando CST=S41 ou CST=S60 no icmsEfetNT201805
+
+
+2019-03-10
+
+
+1. gerar informações do Responsável Técnico
+
+   string infRespTec(string CNPJ, string xContato, string email, string fone, string idCSRT, string CSRT_Opc, string chaveNFe_Opc);
+
+2. gerar informações do grupo local de retirada
+
+   string localRetiradaNT201805(string CNPJ, string CPF, string xNome_Opc, string xLgr, string nro, string xCpl_Opc, string xBairro, string cMun, string xMun, string UF, string CEP_Opc, string cPais_Opc, string xPais_Opc, string fone_Opc, string email_Opc, string IE_Opc);
+
+3. gerar informações do grupo local de entrega
+
+   string localEntregaNT201805(string CNPJ, string CPF, string xNome_Opc, string xLgr, string nro, string xCpl_Opc, string xBairro, string cMun, string xMun, string UF, string CEP_Opc, string cPais_Opc, string xPais_Opc, string fone_Opc, string email_Opc, string IE_Opc);
+
+4. gerar informações do grupo med
+
+   string medNT201805(string cProdANVISA, string xMotivoIsencao_Opc, double vPMC);
+
+5. atualização do icmsEfet para gerar os grupo ICMS60, ICMSST ou ICMSSN500 com as novas tags
+
+   string icmsEfetNT201805(string orig, string CST, double vBCSTRet, double pST, double vICMSSubstituto, double vICMSSTRet, double vBCFCPSTRet, double pFCPSTRet, double vFCPSTRet, double pRedBCEfet, double vBCEfet, double pICMSEfet, double vICMSEfet, double vBCSTDest, double vICMSSTDest);
+
+6. atualização do consolida NF-e para permitir a informação do grupo infRespTec
+
+   string NFe201805(string versao, string Id, string ide, string emit, string avulsa_Opc, string dest_Opc, string retirada_Opc, string entrega_Opc, string detalhes, string total, string transp, string cobr_Opc, string pag_Opc, string infAdic_Opc, string exporta_Opc, string compra_Opc, string cana_Opc, string autXML_Opc, string infRespTec_Opc);
+
+7. Evento de cancelamento NFe substituida
+
+   string CancelaNFSubst(string siglaWS, int tipoAmbiente, string nomeCertificado, string versao, out string msgDados, out string msgRetWS, out int cStat, out string msgResultado, string chaveNFe, string nProtocolo, string justificativa, string dhEvento, string verAplic, string chaveNFeSubst, out string nProtocoloCanc, out string dProtocoloCanc, string proxy, string usuario, string senha, string licenca)
+
+8. Geração do grupo Local de Retirada no DANFE
+
+9. Geração do grupo Local de Entrega DANFE
+
+10. Atualização do schema XML para PL PL_009_V4_00_NT_2018_005_v1.10
+    
+    O schema XML foi modificado para tratar a tag vICMSSubstituo como opcional para não prejudicar o uso da DLL antes da atualização em ambiente de produção.
+
+2018/01/23 - v 4.0.6f
+
+1. correção para não omitir o nro = 0 no endereço do destinatário no DANFE
+2. correção para não duplicar o rastro quando existir mais de uma informação de rastreio no item do produto no DANFE
+
+2018/11/08 - v 4.0.6e
+
+1. alteração no tratamento de certificado digital que não tem CNPJ/CPF (certificado "FRIO" utilizado pela fsist)
+2. correção do nome da tag raiz do procInutNFe
+
+2018/10/17 - v 4.0.6d
+
+1. alteração para tratar qtdVias := '' do Delphi para o envRegSaida
+2. correção no processo de assinatura da NF-e de PF
+
+2018/10/04 - v 4.0.6c
+
+1. alteração para diferenciar DF-e referenciados (NF-e, NFC-e, CF-e, CT-e, CT-e OS e DF-e)
+2. alteração da mensagem SOAP da consulta cadastro do MT
+                      
+
+2018/09/17 - v 4.0.6b - versão preliminar da DLL compatível com a Nota Técnica NT 2018/002 v1.00 - Emissor PF
+
+1. correção da montagem do procEvento do EPEC
+
+2018/09/02 - v 4.0.6a - versão preliminar da DLL compatível com a Nota Técnica NT 2018/002 v1.00 - Emissor PF
+
+1. correção da validação da licença de uso de emissor pessoa física
+
+2018/08/26 - v 4.0.6 - versão preliminar da DLL compatível com a Nota Técnica NT 2018/002 v1.00 - Emissor PF
+
+1. Adequação da DLL para permitir o uso do certificado digital de PF (emissor PF)
+2. Acréscimo do evento de prestação de serviço em desacordo (CT-e):
+   string EnviaPrestDesacordo(string siglaWS, int tipoAmbiente, string nomeCertificado, string versao, out string msgDados, out string msgRetWS, out int cStat, out string msgResultado, string chaveCTe, string CNPJTomador, string xObs, string dhEvento, out string nProtocolo, out string dProtocolo, string proxy, string usuario, string senha, string licenca)
+3. DANFE, melhorias e alterações:
+   - [nFat+nDup] - possibilidade de mostrar o nFat + nDup concatenado 
+   - [sem uTrib] - possibilidade de omitir o uTrib quando uTrib diferente de uCom
+   - CPF do emissor
+
+
+2018/06/10 - v 4.0.5 - versão da DLL compatível com a Nota Técnica NT 2016/002 v1.60
+
+1. Alteração dos WS
+--------------------
+
+Foram disponbilizadas as novas chamadas multi-versão (2.00, 3.10 e 4.00) para os seguintes WS:
+
+a) EnviaLoteV3
+b) BuscaLoteV3
+c) EnviaNFSincrono
+d) ConsultaNF2G
+e) ConsultaStatus2G
+f) InutilizaNroNF2G
+g) EnviaNFe2G
+h) BuscaNFe2G
+i) ConsultaCad2G
+j) CancelaNFEvento 
+k) EnviaCCe2G 
+l) EnviaEPEC 
+m) EnviaPedProrrog 
+n) EnviaCancPedProrrog 
+
+Vale observar que nem todas as UF oferecem os WS em ambiente de homologação e os serviços ainda estão instáveis.
+
+
+2. Alteração do leiaute XML da NF-e;
+------------------------------------
+
+string identificador400(int cUF, int cNF, string natOp, int mod, int serie, int nNF, string dhEmi, string dhSaiEnt, int tpNF, int idDest, string cMunFG, string NFref_Opc, int tpImp, int tpEmis, int cDV, int tpAmb, int finNFe, int indFinal, int indPres, int procEmi, string verProc, string dhCont_Opc, string xJust_Opc)
+
+string produto400(string cProd, string cEAN, string xProd, string NCM, string NVE_Opc, string CEST_Opc, string indEscala_Opc, string CNPJFab_Opc, string cBenef_Opc, string EXTIPI_Opc, int CFOP, string uCom, string qCom, string vUnCom, double vProd, string cEANTrib, string uTrib, string qTrib, string vUnTrib, double vFrete, double vSeg, double vDesc, double vOutro, int indTot, string DI_Opc, string detExport_Opc, string DetEspecifico_Opc, string xPed_Opc, string nItemPed_Opc, string nFCI_Opc, string rastro_Opc)
+
+string rastro(string nLote, double qLote, DateTime dFab, DateTime dVal, string cAgreg_Opc)
+
+string med400(string cProdANVISA, double vPMC)
+
+string comb400(string cProdANP, string descANP, double pGLP_Opc, double pGNn_Opc, double pGNi_Opc, double vPart_Opc, string CODIF_Opc, double qTemp_Opc, string UFCons, double qBCProd_Opc, double vAliqProd_Opc, double vCIDE_Opc, string encerrante_Opc)
+
+string icms400(string orig, string CST, int modBC, double pRedBC, double vBC, double pICMS, double vICMS, int modBCST, double pMVAST, double pRedBCST, double vBCST, double pICMSST, double vICMSST, double vBCSTRet, double vICMSSRet, double vBCSTDest, double vICMSSTDest, int motDesICMS, double pBCOp, string UFST, double pCredSN, double vCredICMSSN, double vICMSDeson, double vICMSOp, double pDif, double vICMSDif, double vBCFCP, double pFCP, double vFCP, double vBCFCPST, double pFCPST, double vFCPST, double vBCFCPSTRet, double pFCPSTRet, double vFCPSTRet, double pST)
+
+string ICMSUFDest400(double vBCUFDest, double vBCFCPUFDest_Opc, double pFCPUFDest, double pICMSUFDest, double pICMSInter, double pICMSInterPart, double vFCPUFDest, double vICMSUFDest, double vICMSUFRemet)
+
+string totalICMS400(double vBC, double vICMS, double vBCST, double vST, double vProd, double vFrete, double vSeg, double vDesc, double vII, double vIPI, double vPIS, double vCOFINS, double vOutro, double vNF, double vTotTrib, double vICMSDeson, double vICMSUFDest_Opc, double vICMSUFRemet_Opc, double vFCPUFDest_Opc, double vFCP, double vFCPST, double vFCPSTRet, double vIPIDevol)
+
+string AssinarNFCe400(string NFe, string nomeCertificado, string idToken, string Token, string versaoQRCode, string URLConsulta, string urlChave, string indSinc, out int cStat, out string msgResultado, out string lote, out string urlNFCe)
+
+string pagamento400(string detPag, double vTroco_Opc);
+
+string detPag(string indPag_Opc, string tPag, double vPag, string tpIntegra_Opc, string CNPJ_Opc, string tBand_Opc, string cAut_Opc)
+
+string IPI400(string CNPJProd, string cSelo, double qSelo, string cEnq, string CST, double vBC, double pIPI, double vIPI, double qUnid, double vUnid)
+
+produto400VFP
+
+string produto400VFP(string cProd, string cEAN, string xProd, string NCM, string NVE_Opc, string CEST_Opc, string EXTIPI_Opc, int CFOP, string uCom, string qCom, string vUnCom, double vProd, string cEANTrib, string uTrib, string qTrib, string vUnTrib, double vFrete, double vSeg, double vDesc, double vOutro, int indTot, string DI_Opc, string detExport_Opc, string DetEspecifico_Opc, string xPed_Opc, string nItemPed_Opc, string camposV400);
+
+camposv400 = "indEscala | CNPJFab | cBenef | nFCI | rastros"
+
+
+imposto400VFP 
+
+string icms400VFP(string orig, string CST, int modBC, double pRedBC, double vBC, double pICMS, double vICMS, int modBCST, double pMVAST, double pRedBCST, double vBCST, double pICMSST, double vICMSST, double vBCSTRet, double vICMSSTRet, double vBCICMSSTDest, double vICMSSTDest, int motDesICMS, double pBCOp, string UFST, double pCredSN, double vCredICMSSN, double vICMSDeson, double vICMSOp, double pDif, double vICMSDif, string camposV400);
+
+camposv400 = "vBCFCP | pFCP | vFCP | vBCFCPST | pFCPST | vFCPST | vBCFCPSTRet | pFCPSTRet | vFCPSTRet | pST"
+
+string calcICMSUFDest400(int formaCalculo, double valorBase, double aliqDestino, double aliqInterestadual, double valorBaseFCP, double aliqFCP, int anoOperacao, out double vBCUFDest, out double pFCPUFDest, out double pICMSUFDest, out double pICMSInter, out double pICMSInterPart, out double vFCPUFDest, out double vICMSUFDest, out double vICMSUFRemet, out double vBCOpeInter, out double vICMSOpeInter, out int cResultado, out string msgResultado, out double vBCFCPUFDest);
+
+string icmsEfet(string orig, string CST, double vBCSTRet_Opc, double pST_Opc, double vICMSSTRet_Opc, double vBCFCPSTRet_Opc, double pFCPSTRet_Opc, double vFCPSTRet_Opc, double pRedBCEfet_Opc, double vBCEfet_Opc, double pICMSEfet_Opc, double vICMSEfet_Opc)
+
+
+
+4. ATUALIZAÇÃO DE VERSÃO:
+-------------------------
+
+A atualização para a versão 2G v4.0x é gratuita para todos os usuários que adquiriram ou ativaram a versão 2G após 30/11/2016, os demais usuários devem adquirir a atualização da DLL por R$ 30,00 por CNPJ licenciado. Caso não tenha recebido um e-mail com a relação das chaves da versão 2G para as licenças adquiridas após 30/11/2016 queira entrar em conato pelo fale conosco: wwww.flexdocs.com.br/suporte.
+
+A chave da licença de uso desta versão é distinta da versão anterior e será disponibilizada oportunamente, caso necessite utilizar a versão 2G em produção, queira solicitar a chave da licença, mas ressaltamos que a DLL ainda não foi suficentemente testada e nem existe garantia que os Web Services da SEFAZ estão estáveis também.

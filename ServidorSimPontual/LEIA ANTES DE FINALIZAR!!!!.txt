@@ -1,0 +1,34 @@
+
+               ##### ATENÇÃO ######
+
+ ATIVAR O SERVIÇO ATUALIZA MOVIMENTO NO WINDOWS!!
+
+--------------------------------------------------------------------------------
+
+ COMPARTILHAR A PASTA DE CFE, NFE, ACESSOS PARA TODOS E PERMITIR CONTROLE TOTAL!!!.
+
+--------------------------------------------------------------------------------
+
+ MARCAR NO ÍCONE DO ATUALIZA_SEFAZ PARA "ABRIR SEMPRE NA INICIALIZAÇÃO", VERIFICAR O CAMINHO DO BANCO DE DADOS DO CLIENTE
+ E EXECUTAR A TRANSMISSÃO PARA TESTAR.
+
+--------------------------------------------------------------------------------
+
+
+# INCLUIR A VERSÃO MAIS ATUAL DO SISTEMA SimPontual
+*Através do Link: http://www.pontualtecnologia.com.br/download/D11/FDAC/SimPontual.rar
+**INCLUIR A MESMA NA PASTA "Acessos/SimPontual.exe" E NA PASTA RAIZ DA ADMINISTRACAO DO SERVIDOR.
+
+--------------------------------------------------------------------------------
+
+# DEPOIS DE INSTALAR A FLEXDOCS MAIS ATUAL (NF-e UTil 4.11a):
+1º Copiar os arquivos da pasta "FlexDocs\NFe_Util\2Gv4.11a".
+2º Copiar e colar os arquivos na pasta raiz da ADMINISTRACAO.
+
+--------------------------------------------------------------------------------
+                #### INFORMAÇÃO IMPORTANTE ######
+# O BANCO QUE ESTÁ NA PASTA DB É O BANCO EM BRANCO, TXT DO ÚLTIMO SCRIPT RODADO TAMBÉM SE ENCONTRA LÁ. #
+# CASO HOUVER, FAVOR INCLUIR BANCO DE DADOS DO CLIENTE NA PASTA "DB" DA ADMINISTRACAO #
+
+
+SE HOUVER DUVIDAS QUANTO A INSTALAÇÃO FAVOR ENTRAR EM CONTATO COM O SUPORTE.

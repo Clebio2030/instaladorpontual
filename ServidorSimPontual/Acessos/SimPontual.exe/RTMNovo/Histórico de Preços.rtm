@@ -1,0 +1,1013 @@
+object ppReport: TppReport
+  AutoStop = False
+  DataPipeline = daBDEQueryDataView1.HISTORICO_PRECO
+  PassSetting = psTwoPass
+  PrinterSetup.BinName = 'Default'
+  PrinterSetup.DocumentName = 'Report'
+  PrinterSetup.PaperName = 'Carta'
+  PrinterSetup.PrinterName = 'Default'
+  PrinterSetup.SaveDeviceSettings = False
+  PrinterSetup.mmMarginBottom = 11906
+  PrinterSetup.mmMarginLeft = 6350
+  PrinterSetup.mmMarginRight = 6350
+  PrinterSetup.mmMarginTop = 6350
+  PrinterSetup.mmPaperHeight = 279401
+  PrinterSetup.mmPaperWidth = 215900
+  PrinterSetup.PaperSize = 120
+  Template.FileName = 'G:\aless\Desktop\Hist'#243'rico de Pre'#231'os.rtm'
+  Template.Format = ftASCII
+  Units = utScreenPixels
+  AllowPrintToArchive = True
+  AllowPrintToFile = True
+  CachePages = True
+  DeviceType = 'Screen'
+  EmailSettings.ReportFormat = 'PDF'
+  LanguageID = 'Default'
+  OutlineSettings.CreateNode = True
+  OutlineSettings.CreatePageNodes = True
+  OutlineSettings.Enabled = False
+  OutlineSettings.Visible = False
+  PDFSettings.EmbedFontOptions = [efUseSubset]
+  PDFSettings.EncryptSettings.AllowCopy = True
+  PDFSettings.EncryptSettings.AllowInteract = True
+  PDFSettings.EncryptSettings.AllowModify = True
+  PDFSettings.EncryptSettings.AllowPrint = True
+  PDFSettings.EncryptSettings.Enabled = False
+  PDFSettings.FontEncoding = feAnsi
+  PreviewFormSettings.WindowState = wsMaximized
+  RTFSettings.DefaultFont.Charset = DEFAULT_CHARSET
+  RTFSettings.DefaultFont.Color = clWindowText
+  RTFSettings.DefaultFont.Height = -13
+  RTFSettings.DefaultFont.Name = 'Arial'
+  RTFSettings.DefaultFont.Style = []
+  SavePrinterSetup = True
+  TextSearchSettings.DefaultString = '<Texto a localizar>'
+  TextSearchSettings.Enabled = False
+  Left = 25
+  Top = 150
+  Version = '12.03'
+  mmColumnWidth = 203200
+  DataPipelineName = 'HISTORICO_PRECO'
+  object ppHeaderBand1: TppHeaderBand
+    mmBottomOffset = 0
+    mmHeight = 19050
+    mmPrintPosition = 0
+    object ppLabel8: TppLabel
+      UserName = 'Label8'
+      HyperlinkColor = clBlue
+      Border.BorderPositions = []
+      Border.Color = clBlack
+      Border.Style = psSolid
+      Border.Visible = False
+      Caption = 'Hist'#243'rico de Pre'#231'os'
+      Ellipsis = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 33
+      Font.Style = [fsBold]
+      TextAlignment = taCentered
+      Transparent = True
+      mmHeight = 13494
+      mmLeft = 0
+      mmTop = 0
+      mmWidth = 203465
+      BandType = 0
+    end
+  end
+  object ppDetailBand1: TppDetailBand
+    Background1.Brush.Style = bsClear
+    Background1.Gradient.EndColor = clWhite
+    Background1.Gradient.StartColor = clWhite
+    Background1.Gradient.Style = gsNone
+    Background2.Brush.Style = bsClear
+    Background2.Gradient.EndColor = clWhite
+    Background2.Gradient.StartColor = clWhite
+    Background2.Gradient.Style = gsNone
+    mmBottomOffset = 0
+    mmHeight = 3969
+    mmPrintPosition = 0
+    object ppDBText3: TppDBText
+      UserName = 'DBText3'
+      HyperlinkColor = clBlue
+      Border.BorderPositions = []
+      Border.Color = clBlack
+      Border.Style = psSolid
+      Border.Visible = False
+      DataField = 'CDUNIDADE'
+      DataPipeline = daBDEQueryDataView1.HISTORICO_PRECO
+      Ellipsis = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 10
+      Font.Style = []
+      Transparent = True
+      DataPipelineName = 'HISTORICO_PRECO'
+      mmHeight = 3969
+      mmLeft = 10054
+      mmTop = 0
+      mmWidth = 17198
+      BandType = 4
+    end
+    object ppDBText4: TppDBText
+      UserName = 'DBText4'
+      HyperlinkColor = clBlue
+      Border.BorderPositions = []
+      Border.Color = clBlack
+      Border.Style = psSolid
+      Border.Visible = False
+      DataField = 'PRECO'
+      DataPipeline = daBDEQueryDataView1.HISTORICO_PRECO
+      DisplayFormat = '#,0.00;-#,0.00'
+      Ellipsis = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 10
+      Font.Style = []
+      TextAlignment = taRightJustified
+      Transparent = True
+      DataPipelineName = 'HISTORICO_PRECO'
+      mmHeight = 3969
+      mmLeft = 37571
+      mmTop = 0
+      mmWidth = 19579
+      BandType = 4
+    end
+    object ppDBText5: TppDBText
+      UserName = 'DBText5'
+      HyperlinkColor = clBlue
+      Border.BorderPositions = []
+      Border.Color = clBlack
+      Border.Style = psSolid
+      Border.Visible = False
+      DataField = 'PRECO_2'
+      DataPipeline = daBDEQueryDataView1.HISTORICO_PRECO
+      DisplayFormat = '#,0.00;-#,0.00'
+      Ellipsis = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 10
+      Font.Style = []
+      TextAlignment = taRightJustified
+      Transparent = True
+      DataPipelineName = 'HISTORICO_PRECO'
+      mmHeight = 3969
+      mmLeft = 65352
+      mmTop = 0
+      mmWidth = 19579
+      BandType = 4
+    end
+    object ppDBText6: TppDBText
+      UserName = 'DBText6'
+      HyperlinkColor = clBlue
+      Border.BorderPositions = []
+      Border.Color = clBlack
+      Border.Style = psSolid
+      Border.Visible = False
+      DataField = 'DTREAJUSTE'
+      DataPipeline = daBDEQueryDataView1.HISTORICO_PRECO
+      DisplayFormat = 'dd-mmm-yy'
+      Ellipsis = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 10
+      Font.Style = []
+      Transparent = True
+      DataPipelineName = 'HISTORICO_PRECO'
+      mmHeight = 3969
+      mmLeft = 93663
+      mmTop = 0
+      mmWidth = 52123
+      BandType = 4
+    end
+  end
+  object ppFooterBand1: TppFooterBand
+    mmBottomOffset = 0
+    mmHeight = 0
+    mmPrintPosition = 0
+  end
+  object ppGroup1: TppGroup
+    BreakName = 'CDPRODUTO'
+    DataPipeline = daBDEQueryDataView1.HISTORICO_PRECO
+    GroupFileSettings.NewFile = False
+    GroupFileSettings.EmailFile = False
+    KeepTogether = True
+    OutlineSettings.CreateNode = True
+    StartOnOddPage = False
+    UserName = 'Group1'
+    mmNewColumnThreshold = 0
+    mmNewPageThreshold = 0
+    DataPipelineName = 'HISTORICO_PRECO'
+    NewFile = False
+    object ppGroupHeaderBand1: TppGroupHeaderBand
+      mmBottomOffset = 0
+      mmHeight = 8731
+      mmPrintPosition = 0
+      object ppDBText1: TppDBText
+        UserName = 'DBText1'
+        HyperlinkColor = clBlue
+        Border.BorderPositions = []
+        Border.Color = clBlack
+        Border.Style = psSolid
+        Border.Visible = False
+        DataField = 'PRODUTO'
+        DataPipeline = daBDEQueryDataView1.HISTORICO_PRECO
+        Ellipsis = False
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Arial'
+        Font.Size = 10
+        Font.Style = []
+        Transparent = True
+        DataPipelineName = 'HISTORICO_PRECO'
+        mmHeight = 3969
+        mmLeft = 34131
+        mmTop = 4498
+        mmWidth = 164571
+        BandType = 3
+        GroupNo = 0
+      end
+      object ppDBText7: TppDBText
+        UserName = 'DBText7'
+        HyperlinkColor = clBlue
+        Border.BorderPositions = []
+        Border.Color = clBlack
+        Border.Style = psSolid
+        Border.Visible = False
+        DataField = 'CDPRODUTO'
+        DataPipeline = daBDEQueryDataView1.HISTORICO_PRECO
+        Ellipsis = False
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Arial'
+        Font.Size = 10
+        Font.Style = []
+        Transparent = True
+        DataPipelineName = 'HISTORICO_PRECO'
+        mmHeight = 3969
+        mmLeft = 2910
+        mmTop = 4498
+        mmWidth = 23813
+        BandType = 3
+        GroupNo = 0
+      end
+      object ppLabel6: TppLabel
+        UserName = 'Label6'
+        HyperlinkColor = clBlue
+        Border.BorderPositions = []
+        Border.Color = clBlack
+        Border.Style = psSolid
+        Border.Visible = False
+        Caption = 'C'#243'digo'
+        Ellipsis = False
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Arial'
+        Font.Size = 10
+        Font.Style = [fsBold]
+        TextAlignment = taRightJustified
+        Transparent = True
+        mmHeight = 4191
+        mmLeft = 2910
+        mmTop = 0
+        mmWidth = 12150
+        BandType = 3
+        GroupNo = 0
+      end
+      object ppLabel7: TppLabel
+        UserName = 'Label7'
+        HyperlinkColor = clBlue
+        Border.BorderPositions = []
+        Border.Color = clBlack
+        Border.Style = psSolid
+        Border.Visible = False
+        Caption = 'Produto'
+        Ellipsis = False
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Arial'
+        Font.Size = 10
+        Font.Style = [fsBold]
+        Transparent = True
+        mmHeight = 4191
+        mmLeft = 34131
+        mmTop = 0
+        mmWidth = 13504
+        BandType = 3
+        GroupNo = 0
+      end
+    end
+    object ppGroupFooterBand1: TppGroupFooterBand
+      HideWhenOneDetail = False
+      mmBottomOffset = 0
+      mmHeight = 0
+      mmPrintPosition = 0
+    end
+  end
+  object ppGroup2: TppGroup
+    BreakName = 'IDPRECO'
+    DataPipeline = daBDEQueryDataView1.HISTORICO_PRECO
+    GroupFileSettings.NewFile = False
+    GroupFileSettings.EmailFile = False
+    KeepTogether = True
+    OutlineSettings.CreateNode = True
+    StartOnOddPage = False
+    UserName = 'Group2'
+    mmNewColumnThreshold = 0
+    mmNewPageThreshold = 0
+    DataPipelineName = 'HISTORICO_PRECO'
+    NewFile = False
+    object ppGroupHeaderBand2: TppGroupHeaderBand
+      mmBottomOffset = 0
+      mmHeight = 13229
+      mmPrintPosition = 0
+      object ppDBText2: TppDBText
+        UserName = 'DBText2'
+        HyperlinkColor = clBlue
+        Border.BorderPositions = []
+        Border.Color = clBlack
+        Border.Style = psSolid
+        Border.Visible = False
+        DataField = 'DESCRICAO'
+        DataPipeline = daBDEQueryDataView1.HISTORICO_PRECO
+        Ellipsis = False
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Arial'
+        Font.Size = 10
+        Font.Style = []
+        Transparent = True
+        DataPipelineName = 'HISTORICO_PRECO'
+        mmHeight = 3969
+        mmLeft = 31485
+        mmTop = 0
+        mmWidth = 65617
+        BandType = 3
+        GroupNo = 1
+      end
+      object ppLabel1: TppLabel
+        UserName = 'Label1'
+        HyperlinkColor = clBlue
+        Border.BorderPositions = []
+        Border.Color = clBlack
+        Border.Style = psSolid
+        Border.Visible = False
+        Caption = 'Unidade'
+        Ellipsis = False
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Arial'
+        Font.Size = 10
+        Font.Style = [fsBold]
+        TextAlignment = taRightJustified
+        Transparent = True
+        mmHeight = 4191
+        mmLeft = 10054
+        mmTop = 6350
+        mmWidth = 13885
+        BandType = 3
+        GroupNo = 1
+      end
+      object ppLabel2: TppLabel
+        UserName = 'Label2'
+        HyperlinkColor = clBlue
+        Border.BorderPositions = []
+        Border.Color = clBlack
+        Border.Style = psSolid
+        Border.Visible = False
+        Caption = 'Pre'#231'o Antigo'
+        Ellipsis = False
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Arial'
+        Font.Size = 10
+        Font.Style = [fsBold]
+        TextAlignment = taRightJustified
+        Transparent = True
+        mmHeight = 4191
+        mmLeft = 36777
+        mmTop = 6350
+        mmWidth = 21632
+        BandType = 3
+        GroupNo = 1
+      end
+      object ppLabel3: TppLabel
+        UserName = 'Label3'
+        HyperlinkColor = clBlue
+        Border.BorderPositions = []
+        Border.Color = clBlack
+        Border.Style = psSolid
+        Border.Visible = False
+        Caption = 'Pre'#231'o Novo'
+        Ellipsis = False
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Arial'
+        Font.Size = 10
+        Font.Style = [fsBold]
+        TextAlignment = taRightJustified
+        Transparent = True
+        mmHeight = 4191
+        mmLeft = 65617
+        mmTop = 6350
+        mmWidth = 19558
+        BandType = 3
+        GroupNo = 1
+      end
+      object ppLabel4: TppLabel
+        UserName = 'Label4'
+        HyperlinkColor = clBlue
+        Border.BorderPositions = []
+        Border.Color = clBlack
+        Border.Style = psSolid
+        Border.Visible = False
+        Caption = 'Data do Reajuste'
+        Ellipsis = False
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Arial'
+        Font.Size = 10
+        Font.Style = [fsBold]
+        TextAlignment = taRightJustified
+        Transparent = True
+        mmHeight = 4233
+        mmLeft = 93663
+        mmTop = 6350
+        mmWidth = 28575
+        BandType = 3
+        GroupNo = 1
+      end
+      object ppLine1: TppLine
+        UserName = 'Line1'
+        Border.BorderPositions = []
+        Border.Color = clBlack
+        Border.Style = psSolid
+        Border.Visible = False
+        Weight = 0.750000000000000000
+        mmHeight = 3969
+        mmLeft = 265
+        mmTop = 10583
+        mmWidth = 202936
+        BandType = 3
+        GroupNo = 1
+      end
+      object ppLine2: TppLine
+        UserName = 'Line2'
+        Border.BorderPositions = []
+        Border.Color = clBlack
+        Border.Style = psSolid
+        Border.Visible = False
+        Weight = 0.750000000000000000
+        mmHeight = 3969
+        mmLeft = 265
+        mmTop = 11113
+        mmWidth = 202936
+        BandType = 3
+        GroupNo = 1
+      end
+      object ppLabel5: TppLabel
+        UserName = 'Label5'
+        HyperlinkColor = clBlue
+        Border.BorderPositions = []
+        Border.Color = clBlack
+        Border.Style = psSolid
+        Border.Visible = False
+        Caption = 'Tabela de Pre'#231'o:'
+        Ellipsis = False
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Arial'
+        Font.Size = 10
+        Font.Style = [fsBold]
+        TextAlignment = taRightJustified
+        Transparent = True
+        mmHeight = 4191
+        mmLeft = 2381
+        mmTop = 0
+        mmWidth = 27898
+        BandType = 3
+        GroupNo = 1
+      end
+    end
+    object ppGroupFooterBand2: TppGroupFooterBand
+      HideWhenOneDetail = False
+      mmBottomOffset = 0
+      mmHeight = 5292
+      mmPrintPosition = 0
+      object ppLine3: TppLine
+        UserName = 'Line3'
+        Border.BorderPositions = []
+        Border.Color = clBlack
+        Border.Style = psSolid
+        Border.Visible = False
+        Weight = 0.750000000000000000
+        mmHeight = 3175
+        mmLeft = 265
+        mmTop = 1852
+        mmWidth = 202936
+        BandType = 5
+        GroupNo = 1
+      end
+      object ppLine4: TppLine
+        UserName = 'Line4'
+        Border.BorderPositions = []
+        Border.Color = clBlack
+        Border.Style = psSolid
+        Border.Visible = False
+        Weight = 0.750000000000000000
+        mmHeight = 3175
+        mmLeft = 265
+        mmTop = 1852
+        mmWidth = 202936
+        BandType = 5
+        GroupNo = 1
+      end
+      object ppLine5: TppLine
+        UserName = 'Line5'
+        Border.BorderPositions = []
+        Border.Color = clBlack
+        Border.Style = psSolid
+        Border.Visible = False
+        Weight = 0.750000000000000000
+        mmHeight = 3175
+        mmLeft = 265
+        mmTop = 2117
+        mmWidth = 202936
+        BandType = 5
+        GroupNo = 1
+      end
+      object ppLine6: TppLine
+        UserName = 'Line6'
+        Border.BorderPositions = []
+        Border.Color = clBlack
+        Border.Style = psSolid
+        Border.Visible = False
+        Weight = 0.750000000000000000
+        mmHeight = 3175
+        mmLeft = 265
+        mmTop = 2117
+        mmWidth = 202936
+        BandType = 5
+        GroupNo = 1
+      end
+    end
+  end
+  object daDataModule1: TdaDataModule
+    object daBDEQueryDataView1: TdaBDEQueryDataView
+      UserName = 'Query_HISTORICO_PRECO'
+      Height = 329
+      Left = 10
+      NameColumnWidth = 105
+      SizeColumnWidth = 35
+      SortMode = 0
+      Top = 10
+      TypeColumnWidth = 52
+      Width = 266
+      AutoSearchTabOrder = 0
+      object HISTORICO_PRECO: TppChildBDEPipeline
+        AutoCreateFields = False
+        UserName = 'HISTORICO_PRECO'
+        object ppField1: TppField
+          FieldAlias = 'PRODUTO'
+          FieldName = 'PRODUTO'
+          FieldLength = 70
+          DisplayWidth = 70
+          Position = 0
+          TableName = 'PRODUTO_1'
+        end
+        object ppField2: TppField
+          FieldAlias = 'CDPRODUTO'
+          FieldName = 'CDPRODUTO'
+          FieldLength = 10
+          IsDetail = True
+          DisplayWidth = 10
+          Position = 1
+          TableName = 'PRODUTOPRECO_HISTORICO_1'
+        end
+        object ppField3: TppField
+          FieldAlias = 'IDPRECO'
+          FieldName = 'IDPRECO'
+          FieldLength = 0
+          IsDetail = True
+          DataType = dtInteger
+          DisplayWidth = 10
+          Position = 2
+          TableName = 'PRODUTOPRECO_HISTORICO_1'
+        end
+        object ppField4: TppField
+          FieldAlias = 'CDUNIDADE'
+          FieldName = 'CDUNIDADE'
+          FieldLength = 3
+          IsDetail = True
+          DisplayWidth = 3
+          Position = 3
+          TableName = 'PRODUTOPRECO_HISTORICO_1'
+        end
+        object ppField5: TppField
+          FieldAlias = 'PRECO_ANTIGO'
+          FieldName = 'PRECO'
+          FieldLength = 0
+          IsDetail = True
+          DataType = dtDouble
+          DisplayWidth = 10
+          Position = 4
+          TableName = 'PRODUTOPRECO_HISTORICO_1'
+        end
+        object ppField6: TppField
+          FieldAlias = 'DTREAJUSTE'
+          FieldName = 'DTREAJUSTE'
+          FieldLength = 0
+          IsDetail = True
+          DataType = dtDateTime
+          DisplayWidth = 18
+          Position = 5
+          TableName = 'PRODUTOPRECO_HISTORICO_1'
+        end
+        object ppField7: TppField
+          FieldAlias = 'PRECO_NOVO'
+          FieldName = 'PRECO_2'
+          FieldLength = 0
+          IsDetail = True
+          DataType = dtDouble
+          DisplayWidth = 10
+          Position = 6
+          TableName = 'PRODUTOPRECO_1'
+        end
+        object ppField8: TppField
+          FieldAlias = 'TABELA'
+          FieldName = 'DESCRICAO'
+          FieldLength = 20
+          IsDetail = True
+          DisplayWidth = 20
+          Position = 7
+          TableName = 'TABELAPRECO_1'
+        end
+      end
+      object daSQL1: TdaSQL
+        CollationType = ctASCII
+        DatabaseName = 'dbdados'
+        DatabaseType = dtInterBase
+        DataPipelineName = 'HISTORICO_PRECO'
+        IsCaseSensitive = True
+        LinkColor = clMaroon
+        LinkType = ltMagicSQL
+        MaxSQLFieldAliasLength = 25
+        SQLText.Strings = (
+          'SELECT PRODUTO_1.PRODUTO, '
+          '       PRODUTOPRECO_HISTORICO_1.CDPRODUTO, '
+          '       PRODUTOPRECO_HISTORICO_1.IDPRECO, '
+          '       PRODUTOPRECO_HISTORICO_1.CDUNIDADE, '
+          '       PRODUTOPRECO_HISTORICO_1.PRECO, '
+          '       PRODUTOPRECO_HISTORICO_1.DTREAJUSTE, '
+          '       PRODUTOPRECO_1.PRECO PRECO_2, '
+          '       TABELAPRECO_1.DESCRICAO'
+          'FROM PRODUTO PRODUTO_1'
+          
+            '      INNER JOIN PRODUTOPRECO_HISTORICO PRODUTOPRECO_HISTORICO_1' +
+            ' ON '
+          '     (PRODUTOPRECO_HISTORICO_1.CDPRODUTO = PRODUTO_1.CDPRODUTO)'
+          '      INNER JOIN PRODUTOPRECO PRODUTOPRECO_1 ON '
+          
+            '     (PRODUTOPRECO_1.CDPRODUTO = PRODUTOPRECO_HISTORICO_1.CDPROD' +
+            'UTO)'
+          
+            '      AND (PRODUTOPRECO_1.IDPRECO = PRODUTOPRECO_HISTORICO_1.IDP' +
+            'RECO)'
+          
+            '      AND (PRODUTOPRECO_1.CDUNIDADE = PRODUTOPRECO_HISTORICO_1.C' +
+            'DUNIDADE)'
+          '      INNER JOIN TABELAPRECO TABELAPRECO_1 ON '
+          '     (TABELAPRECO_1.IDPRECO = PRODUTOPRECO_HISTORICO_1.IDPRECO)'
+          'ORDER BY PRODUTOPRECO_HISTORICO_1.CDPRODUTO, '
+          '         PRODUTOPRECO_HISTORICO_1.IDPRECO, '
+          '         PRODUTOPRECO_HISTORICO_1.CDUNIDADE, '
+          '         PRODUTOPRECO_HISTORICO_1.DTREAJUSTE DESC')
+        SQLType = sqSQL2
+        object daField1: TdaField
+          Alias = 'PRODUTO'
+          DisplayWidth = 70
+          FieldAlias = 'PRODUTO'
+          FieldLength = 70
+          FieldName = 'PRODUTO'
+          SQLFieldName = 'PRODUTO'
+          TableAlias = 'PRODUTO'
+          TableName = 'PRODUTO'
+          TableSQLAlias = 'PRODUTO_1'
+        end
+        object daField2: TdaField
+          Alias = 'CDPRODUTO'
+          DisplayWidth = 10
+          FieldAlias = 'CDPRODUTO'
+          FieldLength = 10
+          FieldName = 'CDPRODUTO'
+          IsDetail = True
+          SQLFieldName = 'CDPRODUTO'
+          TableAlias = 'PRODUTOPRECO_HISTORICO'
+          TableName = 'PRODUTOPRECO_HISTORICO'
+          TableSQLAlias = 'PRODUTOPRECO_HISTORICO_1'
+        end
+        object daField3: TdaField
+          Alias = 'IDPRECO'
+          DataType = dtInteger
+          DisplayWidth = 10
+          FieldAlias = 'IDPRECO'
+          FieldLength = 0
+          FieldName = 'IDPRECO'
+          IsDetail = True
+          SQLFieldName = 'IDPRECO'
+          TableAlias = 'PRODUTOPRECO_HISTORICO'
+          TableName = 'PRODUTOPRECO_HISTORICO'
+          TableSQLAlias = 'PRODUTOPRECO_HISTORICO_1'
+        end
+        object daField4: TdaField
+          Alias = 'CDUNIDADE'
+          DisplayWidth = 3
+          FieldAlias = 'CDUNIDADE'
+          FieldLength = 3
+          FieldName = 'CDUNIDADE'
+          IsDetail = True
+          SQLFieldName = 'CDUNIDADE'
+          TableAlias = 'PRODUTOPRECO_HISTORICO'
+          TableName = 'PRODUTOPRECO_HISTORICO'
+          TableSQLAlias = 'PRODUTOPRECO_HISTORICO_1'
+        end
+        object daField5: TdaField
+          Alias = 'PRECO_ANTIGO'
+          DataType = dtDouble
+          DisplayWidth = 10
+          FieldAlias = 'PRECO'
+          FieldLength = 0
+          FieldName = 'PRECO'
+          IsDetail = True
+          SQLFieldName = 'PRECO'
+          TableAlias = 'PRODUTOPRECO_HISTORICO'
+          TableName = 'PRODUTOPRECO_HISTORICO'
+          TableSQLAlias = 'PRODUTOPRECO_HISTORICO_1'
+        end
+        object daField6: TdaField
+          Alias = 'DTREAJUSTE'
+          DataType = dtDateTime
+          DisplayWidth = 18
+          FieldAlias = 'DTREAJUSTE'
+          FieldLength = 0
+          FieldName = 'DTREAJUSTE'
+          IsDetail = True
+          SQLFieldName = 'DTREAJUSTE'
+          TableAlias = 'PRODUTOPRECO_HISTORICO'
+          TableName = 'PRODUTOPRECO_HISTORICO'
+          TableSQLAlias = 'PRODUTOPRECO_HISTORICO_1'
+        end
+        object daField7: TdaField
+          Alias = 'PRECO_NOVO'
+          DataType = dtDouble
+          DisplayWidth = 10
+          FieldAlias = 'PRECO'
+          FieldLength = 0
+          FieldName = 'PRECO'
+          IsDetail = True
+          SQLFieldName = 'PRECO_2'
+          TableAlias = 'PRODUTOPRECO'
+          TableName = 'PRODUTOPRECO'
+          TableSQLAlias = 'PRODUTOPRECO_1'
+        end
+        object daField8: TdaField
+          Alias = 'TABELA'
+          DisplayWidth = 20
+          FieldAlias = 'DESCRICAO'
+          FieldLength = 20
+          FieldName = 'DESCRICAO'
+          IsDetail = True
+          SQLFieldName = 'DESCRICAO'
+          TableAlias = 'TABELAPRECO'
+          TableName = 'TABELAPRECO'
+          TableSQLAlias = 'TABELAPRECO_1'
+        end
+        object daField9: TdaField
+          ChildType = 2
+          Alias = 'CDPRODUTO'
+          DisplayWidth = 10
+          FieldAlias = 'CDPRODUTO'
+          FieldLength = 10
+          FieldName = 'CDPRODUTO'
+          SQLFieldName = 'CDPRODUTO'
+          TableAlias = 'PRODUTOPRECO_HISTORICO'
+          TableName = 'PRODUTOPRECO_HISTORICO'
+          TableSQLAlias = 'PRODUTOPRECO_HISTORICO_1'
+        end
+        object daField10: TdaField
+          ChildType = 2
+          Alias = 'IDPRECO'
+          DataType = dtInteger
+          DisplayWidth = 10
+          FieldAlias = 'IDPRECO'
+          FieldLength = 0
+          FieldName = 'IDPRECO'
+          SQLFieldName = 'IDPRECO'
+          TableAlias = 'PRODUTOPRECO_HISTORICO'
+          TableName = 'PRODUTOPRECO_HISTORICO'
+          TableSQLAlias = 'PRODUTOPRECO_HISTORICO_1'
+        end
+        object daField11: TdaField
+          ChildType = 2
+          Alias = 'CDUNIDADE'
+          DisplayWidth = 3
+          FieldAlias = 'CDUNIDADE'
+          FieldLength = 3
+          FieldName = 'CDUNIDADE'
+          SQLFieldName = 'CDUNIDADE'
+          TableAlias = 'PRODUTOPRECO_HISTORICO'
+          TableName = 'PRODUTOPRECO_HISTORICO'
+          TableSQLAlias = 'PRODUTOPRECO_HISTORICO_1'
+        end
+        object daField12: TdaField
+          ChildType = 2
+          Alias = 'DTREAJUSTE'
+          Ascending = False
+          DataType = dtDateTime
+          DisplayWidth = 18
+          FieldAlias = 'DTREAJUSTE'
+          FieldLength = 0
+          FieldName = 'DTREAJUSTE'
+          SQLFieldName = 'DTREAJUSTE'
+          TableAlias = 'PRODUTOPRECO_HISTORICO'
+          TableName = 'PRODUTOPRECO_HISTORICO'
+          TableSQLAlias = 'PRODUTOPRECO_HISTORICO_1'
+        end
+        object daTable1: TdaTable
+          ChildType = 5
+          Alias = 'PRODUTO'
+          JoinType = dajtNone
+          SQLAlias = 'PRODUTO_1'
+          TableAlias = 'PRODUTO'
+          TableName = 'PRODUTO'
+        end
+        object daTable2: TdaTable
+          ChildType = 5
+          Alias = 'PRODUTOPRECO_HISTORICO'
+          SQLAlias = 'PRODUTOPRECO_HISTORICO_1'
+          TableAlias = 'PRODUTOPRECO_HISTORICO'
+          TableName = 'PRODUTOPRECO_HISTORICO'
+          object daTableJoin1: TdaTableJoin
+            ChildType = 6
+            object daField14: TdaField
+              ChildType = 3
+              Alias = 'CDPRODUTO'
+              DisplayWidth = 10
+              FieldAlias = 'CDPRODUTO'
+              FieldLength = 10
+              FieldName = 'CDPRODUTO'
+              SQLFieldName = 'CDPRODUTO'
+              TableAlias = 'PRODUTOPRECO_HISTORICO'
+              TableName = 'PRODUTOPRECO_HISTORICO'
+              TableSQLAlias = 'PRODUTOPRECO_HISTORICO_1'
+            end
+            object daField13: TdaField
+              ChildType = 4
+              Alias = 'CDPRODUTO'
+              DisplayWidth = 10
+              FieldAlias = 'CDPRODUTO'
+              FieldLength = 10
+              FieldName = 'CDPRODUTO'
+              SQLFieldName = 'CDPRODUTO'
+              TableAlias = 'PRODUTO'
+              TableName = 'PRODUTO'
+              TableSQLAlias = 'PRODUTO_1'
+            end
+          end
+        end
+        object daTable3: TdaTable
+          ChildType = 5
+          Alias = 'PRODUTOPRECO'
+          SQLAlias = 'PRODUTOPRECO_1'
+          TableAlias = 'PRODUTOPRECO'
+          TableName = 'PRODUTOPRECO'
+          object daTableJoin2: TdaTableJoin
+            ChildType = 6
+            object daField16: TdaField
+              ChildType = 3
+              Alias = 'CDPRODUTO'
+              DisplayWidth = 10
+              FieldAlias = 'CDPRODUTO'
+              FieldLength = 10
+              FieldName = 'CDPRODUTO'
+              SQLFieldName = 'CDPRODUTO'
+              TableAlias = 'PRODUTOPRECO'
+              TableName = 'PRODUTOPRECO'
+              TableSQLAlias = 'PRODUTOPRECO_1'
+            end
+            object daField15: TdaField
+              ChildType = 4
+              Alias = 'CDPRODUTO'
+              DisplayWidth = 10
+              FieldAlias = 'CDPRODUTO'
+              FieldLength = 10
+              FieldName = 'CDPRODUTO'
+              SQLFieldName = 'CDPRODUTO'
+              TableAlias = 'PRODUTOPRECO_HISTORICO'
+              TableName = 'PRODUTOPRECO_HISTORICO'
+              TableSQLAlias = 'PRODUTOPRECO_HISTORICO_1'
+            end
+          end
+          object daTableJoin3: TdaTableJoin
+            ChildType = 6
+            object daField18: TdaField
+              ChildType = 3
+              Alias = 'IDPRECO'
+              DataType = dtInteger
+              DisplayWidth = 10
+              FieldAlias = 'IDPRECO'
+              FieldLength = 0
+              FieldName = 'IDPRECO'
+              SQLFieldName = 'IDPRECO'
+              TableAlias = 'PRODUTOPRECO'
+              TableName = 'PRODUTOPRECO'
+              TableSQLAlias = 'PRODUTOPRECO_1'
+            end
+            object daField17: TdaField
+              ChildType = 4
+              Alias = 'IDPRECO'
+              DataType = dtInteger
+              DisplayWidth = 10
+              FieldAlias = 'IDPRECO'
+              FieldLength = 0
+              FieldName = 'IDPRECO'
+              SQLFieldName = 'IDPRECO'
+              TableAlias = 'PRODUTOPRECO_HISTORICO'
+              TableName = 'PRODUTOPRECO_HISTORICO'
+              TableSQLAlias = 'PRODUTOPRECO_HISTORICO_1'
+            end
+          end
+          object daTableJoin4: TdaTableJoin
+            ChildType = 6
+            object daField20: TdaField
+              ChildType = 3
+              Alias = 'CDUNIDADE'
+              DisplayWidth = 3
+              FieldAlias = 'CDUNIDADE'
+              FieldLength = 3
+              FieldName = 'CDUNIDADE'
+              SQLFieldName = 'CDUNIDADE'
+              TableAlias = 'PRODUTOPRECO'
+              TableName = 'PRODUTOPRECO'
+              TableSQLAlias = 'PRODUTOPRECO_1'
+            end
+            object daField19: TdaField
+              ChildType = 4
+              Alias = 'CDUNIDADE'
+              DisplayWidth = 3
+              FieldAlias = 'CDUNIDADE'
+              FieldLength = 3
+              FieldName = 'CDUNIDADE'
+              SQLFieldName = 'CDUNIDADE'
+              TableAlias = 'PRODUTOPRECO_HISTORICO'
+              TableName = 'PRODUTOPRECO_HISTORICO'
+              TableSQLAlias = 'PRODUTOPRECO_HISTORICO_1'
+            end
+          end
+        end
+        object daTable4: TdaTable
+          ChildType = 5
+          Alias = 'TABELAPRECO'
+          SQLAlias = 'TABELAPRECO_1'
+          TableAlias = 'TABELAPRECO'
+          TableName = 'TABELAPRECO'
+          object daTableJoin5: TdaTableJoin
+            ChildType = 6
+            object daField22: TdaField
+              ChildType = 3
+              Alias = 'IDPRECO'
+              DataType = dtInteger
+              DisplayWidth = 10
+              FieldAlias = 'IDPRECO'
+              FieldLength = 0
+              FieldName = 'IDPRECO'
+              SQLFieldName = 'IDPRECO'
+              TableAlias = 'TABELAPRECO'
+              TableName = 'TABELAPRECO'
+              TableSQLAlias = 'TABELAPRECO_1'
+            end
+            object daField21: TdaField
+              ChildType = 4
+              Alias = 'IDPRECO'
+              DataType = dtInteger
+              DisplayWidth = 10
+              FieldAlias = 'IDPRECO'
+              FieldLength = 0
+              FieldName = 'IDPRECO'
+              SQLFieldName = 'IDPRECO'
+              TableAlias = 'PRODUTOPRECO_HISTORICO'
+              TableName = 'PRODUTOPRECO_HISTORICO'
+              TableSQLAlias = 'PRODUTOPRECO_HISTORICO_1'
+            end
+          end
+        end
+      end
+    end
+  end
+  object ppParameterList1: TppParameterList
+  end
+end

@@ -1,0 +1,139 @@
+-- 09/03 13:41:35:204 
+--------------------------------------------------------------------------------
+ATIVAR - 09/03/18 13:41:35:203 - Modelo: Sweda - Porta: COM4 - TimeOut: 7
+         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE=DTR/DSR MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+
+-- 09/04 09:43:54:858 
+--------------------------------------------------------------------------------
+ATIVAR - 09/04/18 09:43:54:858 - Modelo: Sweda - Porta: COM4 - TimeOut: 7
+         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE=DTR/DSR MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+
+-- 09/04 15:29:43:569 
+--------------------------------------------------------------------------------
+ATIVAR - 09/04/18 15:29:43:569 - Modelo: Sweda - Porta: COM4 - TimeOut: 7
+         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE=DTR/DSR MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+
+-- 09/04 17:18:01:890 
+--------------------------------------------------------------------------------
+ATIVAR - 09/04/18 17:18:01:890 - Modelo: Sweda - Porta: COM4 - TimeOut: 7
+         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE=DTR/DSR MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+
+-- 11/04 09:53:56:942 
+--------------------------------------------------------------------------------
+ATIVAR - 11/04/18 09:53:56:942 - Modelo: Sweda - Porta: COM4 - TimeOut: 7
+         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE=DTR/DSR MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+
+-- 11/04 09:56:02:824 
+--------------------------------------------------------------------------------
+ATIVAR - 11/04/18 09:56:02:824 - Modelo: Sweda - Porta: COM4 - TimeOut: 7
+         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE=DTR/DSR MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+
+-- 11/04 09:59:29:349 
+--------------------------------------------------------------------------------
+ATIVAR - 11/04/18 09:59:29:349 - Modelo: Sweda - Porta: COM4 - TimeOut: 7
+         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE=DTR/DSR MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+
+-- 12/04 16:06:34:500 
+--------------------------------------------------------------------------------
+ATIVAR - 12/04/18 16:06:34:500 - Modelo: Sweda - Porta: COM4 - TimeOut: 7
+         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE=DTR/DSR MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+
+-- 12/04 16:55:10:111 
+--------------------------------------------------------------------------------
+ATIVAR - 12/04/18 16:55:10:111 - Modelo: Sweda - Porta: COM4 - TimeOut: 7
+         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE=DTR/DSR MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+
+-- 13/04 09:09:11:008 
+--------------------------------------------------------------------------------
+ATIVAR - 13/04/18 09:09:11:008 - Modelo: Sweda - Porta: COM4 - TimeOut: 7
+         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE=DTR/DSR MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+
+-- 17/04 11:01:54:544 
+--------------------------------------------------------------------------------
+ATIVAR - 17/04/18 11:01:54:544 - Modelo: Sweda - Porta: COM4 - TimeOut: 7
+         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE=DTR/DSR MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+
+-- 30/04 09:19:39:289 
+--------------------------------------------------------------------------------
+ATIVAR - 30/04/18 09:19:39:289 - Modelo: Sweda - Porta: COM4 - TimeOut: 7
+         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE=DTR/DSR MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+
+-- 28/05 17:18:52:776 
+--------------------------------------------------------------------------------
+ATIVAR - 28/05/18 17:18:52:776 - Modelo: Sweda - Porta: COM4 - TimeOut: 7
+         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE=DTR/DSR MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+
+-- 28/05 17:20:30:505   estNaoInicializada
+-- 28/05 17:20:31:982    Ativando a porta: COM4
+-- 28/05 17:20:31:982 
+----------------- ERRO -----------------
+Communication error 2: O sistema não pode encontrar o arquivo especificado
+----------------------------------------
+
+-- 28/05 17:20:31:983    Ativando a porta: COM4
+-- 28/05 17:20:31:983 
+----------------- ERRO -----------------
+Communication error 2: O sistema não pode encontrar o arquivo especificado
+----------------------------------------
+
+-- 06/06 15:03:13:413 
+--------------------------------------------------------------------------------
+ATIVAR - 06/06/18 15:03:13:413 - Modelo: Sweda - Porta: COM4 - TimeOut: 7
+         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE=DTR/DSR MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+
+-- 26/06 17:42:17:184 
+--------------------------------------------------------------------------------
+ATIVAR - 26/06/18 17:42:17:184 - Modelo: Sweda - Porta: COM4 - TimeOut: 7
+         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE=DTR/DSR MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+
+-- 27/06 14:27:36:368 
+--------------------------------------------------------------------------------
+ATIVAR - 27/06/18 14:27:36:368 - Modelo: Sweda - Porta: COM4 - TimeOut: 7
+         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE=DTR/DSR MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+
+-- 27/06 14:36:50:633 
+--------------------------------------------------------------------------------
+ATIVAR - 27/06/18 14:36:50:633 - Modelo: Sweda - Porta: COM4 - TimeOut: 7
+         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE=DTR/DSR MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+
+-- 02/07 14:43:14:678 
+--------------------------------------------------------------------------------
+ATIVAR - 02/07/18 14:43:14:678 - Modelo: Sweda - Porta: COM4 - TimeOut: 7
+         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE=DTR/DSR MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+
+-- 02/07 14:45:50:607 
+--------------------------------------------------------------------------------
+ATIVAR - 02/07/18 14:45:50:607 - Modelo: Sweda - Porta: COM4 - TimeOut: 7
+         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE=DTR/DSR MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+
+-- 17/07 10:36:24:661 
+--------------------------------------------------------------------------------
+ATIVAR - 17/07/18 10:36:24:661 - Modelo: Sweda - Porta: COM4 - TimeOut: 7
+         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE=DTR/DSR MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+
+-- 17/07 10:36:49:553 
+--------------------------------------------------------------------------------
+ATIVAR - 17/07/18 10:36:49:553 - Modelo: Sweda - Porta: COM4 - TimeOut: 7
+         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE=DTR/DSR MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+

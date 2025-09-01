@@ -1,0 +1,1 @@
+C:\Administracao\AtualizaMovimento\AtualizaMovimento.exe /INSTALL

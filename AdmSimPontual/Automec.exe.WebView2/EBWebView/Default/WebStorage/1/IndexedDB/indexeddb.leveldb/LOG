@@ -1,0 +1,6 @@
+2024/08/12-11:27:52.078 1b24 Creating DB C:\Administracao\CAIXA01\Automec.exe.WebView2\EBWebView\Default\WebStorage\1\IndexedDB\indexeddb.leveldb since it was missing.
+2024/08/12-11:27:52.082 1b24 Reusing MANIFEST C:\Administracao\CAIXA01\Automec.exe.WebView2\EBWebView\Default\WebStorage\1\IndexedDB\indexeddb.leveldb/MANIFEST-000001
+2024/08/12-11:27:52.091 2270 Level-0 table #5: started
+2024/08/12-11:27:52.093 2270 Level-0 table #5: 1366 bytes OK
+2024/08/12-11:27:52.094 2270 Delete type=0 #3
+2024/08/12-11:27:52.095 1b24 Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)
