@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2014 rel. 2 (http://www.altova.com) by private (private) -->
+<!-- edited with XMLSpy v2025 rel. 2 (x64) (https://www.altova.com) by PROCERGS (Procergs - Centro de Tecnologia da Informação e Comunicação do Estado do Rio Grande do Sul S.A.) -->
 <xs:schema xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.portalfiscal.inf.br/nfcom" targetNamespace="http://www.portalfiscal.inf.br/nfcom" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="xmldsig-core-schema_v1.01.xsd"/>
 	<xs:include schemaLocation="tiposGeralNFCom_v1.00.xsd"/>
+	<xs:include schemaLocation="DFeTiposBasicos_v1.00.xsd"/>
 	<xs:complexType name="TNFCom">
 		<xs:annotation>
 			<xs:documentation>Tipo Nota Fiscal Fatura de Comunicação</xs:documentation>
@@ -163,6 +164,20 @@ Apenas para notas dos tipos Normal e Substituição com tipo de faturamento norm
 											</xs:restriction>
 										</xs:simpleType>
 									</xs:element>
+									<xs:element name="indNotaEntrada" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Indicador de nota de entrada</xs:documentation>
+											<xs:documentation>1 – Informar quando for nota de ajuste e possuir itens com CFOP de entrada</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="1"/>
+												<xs:maxLength value="1"/>
+												<xs:whiteSpace value="preserve"/>
+												<xs:enumeration value="1"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
 									<xs:sequence minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>Informar apenas
@@ -186,6 +201,11 @@ para tpEmis diferente de 1</xs:documentation>
 											</xs:simpleType>
 										</xs:element>
 									</xs:sequence>
+									<xs:element name="gCompraGov" type="TCompraGovReduzido" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Grupo de Compras Governamentais</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
@@ -274,8 +294,7 @@ para tpEmis diferente de 1</xs:documentation>
 										<xs:element name="CNPJ" type="TCnpjOpc">
 											<xs:annotation>
 												<xs:documentation>Número do CNPJ</xs:documentation>
-												<xs:documentation>Em caso de empresa não estabelecida no Brasil, será informado o CNPJ com zeros.
-							Informar os zeros não significativos.</xs:documentation>
+												<xs:documentation>Informar os zeros não significativos.</xs:documentation>
 											</xs:annotation>
 										</xs:element>
 										<xs:element name="CPF" type="TCpf">
@@ -385,7 +404,7 @@ Nota: No caso de Contribuinte Isento de Inscrição (indIEDest=2) informar a tag
 												<xs:whiteSpace value="preserve"/>
 												<xs:minLength value="1"/>
 												<xs:maxLength value="20"/>
-												<xs:pattern value="([!-ÿ]{0}|[!-ÿ]{1,15})?"/>
+												<xs:pattern value="([!-ÿ]{0}|[!-ÿ]{1,20})?"/>
 											</xs:restriction>
 										</xs:simpleType>
 									</xs:element>
@@ -513,10 +532,7 @@ Sequencia XML</xs:documentation>
 																<xs:documentation>Campo poderá ser exigido a critério da UF – campo 36 do arquivo MESTRE DE DOCUMENTO FISCAL (Anexo Único, item 5 do Conv. 115/03)</xs:documentation>
 															</xs:annotation>
 															<xs:simpleType>
-																<xs:restriction base="xs:base64Binary">
-																	<xs:minLength value="32"/>
-																	<xs:maxLength value="32"/>
-																</xs:restriction>
+																<xs:restriction base="xs:base64Binary"/>
 															</xs:simpleType>
 														</xs:element>
 													</xs:sequence>
@@ -542,15 +558,68 @@ Sequencia XML</xs:documentation>
 								</xs:annotation>
 								<xs:complexType>
 									<xs:sequence>
-										<xs:element name="chNFComLocal" type="TChDFe">
-											<xs:annotation>
-												<xs:documentation>Chave de acesso da NFCom emitida pela Operadora Local</xs:documentation>
-											</xs:annotation>
-										</xs:element>
+										<xs:choice>
+											<xs:element name="chNFComLocal" type="TChDFe">
+												<xs:annotation>
+													<xs:documentation>Chave de acesso da NFCom emitida pela Operadora Local</xs:documentation>
+												</xs:annotation>
+											</xs:element>
+											<xs:element name="gNF">
+												<xs:annotation>
+													<xs:documentation>Informação da NF modelo 21/22 referenciada</xs:documentation>
+												</xs:annotation>
+												<xs:complexType>
+													<xs:sequence>
+														<xs:element name="CNPJ" type="TCnpj">
+															<xs:annotation>
+																<xs:documentation>CNPJ do Emitente</xs:documentation>
+																<xs:documentation>Informar o CNPJ do emitente do Documento Fiscal</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="mod" type="TModNFPapel">
+															<xs:annotation>
+																<xs:documentation>Modelo do documento</xs:documentation>
+																<xs:documentation>21 ou 22</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="serie">
+															<xs:annotation>
+																<xs:documentation>Serie do documento fiscal</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="TString">
+																	<xs:minLength value="3"/>
+																	<xs:maxLength value="3"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="nNF" type="TNF">
+															<xs:annotation>
+																<xs:documentation>Número do documento fiscal</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="CompetEmis" type="TCompet">
+															<xs:annotation>
+																<xs:documentation>Ano e mês da emissão da NF (AAAAMM)</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="hash115" minOccurs="0">
+															<xs:annotation>
+																<xs:documentation>Hash do registro no arquivo do convênio 115</xs:documentation>
+																<xs:documentation>Campo poderá ser exigido a critério da UF – campo 36 do arquivo MESTRE DE DOCUMENTO FISCAL (Anexo Único, item 5 do Conv. 115/03)</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="xs:base64Binary"/>
+															</xs:simpleType>
+														</xs:element>
+													</xs:sequence>
+												</xs:complexType>
+											</xs:element>
+										</xs:choice>
 									</xs:sequence>
 								</xs:complexType>
 							</xs:element>
-							<xs:element name="det" maxOccurs="9990">
+							<xs:element name="det" maxOccurs="990">
 								<xs:annotation>
 									<xs:documentation>Detalhamento de Produtos e Serviços </xs:documentation>
 								</xs:annotation>
@@ -948,6 +1017,45 @@ item.
 																							</xs:annotation>
 																						</xs:element>
 																					</xs:sequence>
+																					<xs:sequence minOccurs="0">
+																						<xs:annotation>
+																							<xs:documentation>Sequencia XML</xs:documentation>
+																						</xs:annotation>
+																						<xs:element name="vICMSDeson" type="TDec_1302">
+																							<xs:annotation>
+																								<xs:documentation>Valor do ICMS de desoneração</xs:documentation>
+																							</xs:annotation>
+																						</xs:element>
+																						<xs:element name="cBenef">
+																							<xs:annotation>
+																								<xs:documentation>Código de Benefício Fiscal na UF aplicado ao item</xs:documentation>
+																								<xs:documentation>Código de Benefício Fiscal utilizado pela UF, aplicado ao
+item.
+</xs:documentation>
+																							</xs:annotation>
+																							<xs:simpleType>
+																								<xs:restriction base="xs:string">
+																									<xs:whiteSpace value="preserve"/>
+																									<xs:maxLength value="10"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
+																					</xs:sequence>
+																					<xs:sequence minOccurs="0">
+																						<xs:annotation>
+																							<xs:documentation>Sequencia XML</xs:documentation>
+																						</xs:annotation>
+																						<xs:element name="pFCP" type="TDec_0302a04Opc">
+																							<xs:annotation>
+																								<xs:documentation>Percentual de ICMS relativo ao Fundo de Combate à Pobreza (FCP).</xs:documentation>
+																							</xs:annotation>
+																						</xs:element>
+																						<xs:element name="vFCP" type="TDec_1302">
+																							<xs:annotation>
+																								<xs:documentation>Valor do ICMS relativo ao Fundo de Combate à Pobreza (FCP).</xs:documentation>
+																							</xs:annotation>
+																						</xs:element>
+																					</xs:sequence>
 																				</xs:sequence>
 																			</xs:complexType>
 																		</xs:element>
@@ -1236,6 +1344,11 @@ Se informado esse grupo o schema não permite informar nenhum dos grupos de ICMS
 																	</xs:sequence>
 																</xs:complexType>
 															</xs:element>
+															<xs:element name="IBSCBS" type="TTribNFCom" minOccurs="0">
+																<xs:annotation>
+																	<xs:documentation>Grupo de informações do IBS e CBS</xs:documentation>
+																</xs:annotation>
+															</xs:element>
 														</xs:sequence>
 													</xs:extension>
 												</xs:complexContent>
@@ -1320,6 +1433,11 @@ Se informado esse grupo o schema não permite informar nenhum dos grupos de ICMS
 															<xs:documentation>Valor do COFINS</xs:documentation>
 														</xs:annotation>
 													</xs:element>
+													<xs:element name="vFCP" type="TDec_1302" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Valor do Fundo de Combate à Pobreza (FCP).</xs:documentation>
+														</xs:annotation>
+													</xs:element>
 													<xs:element name="gProc" maxOccurs="10">
 														<xs:annotation>
 															<xs:documentation>Grupo identificador do Processo</xs:documentation>
@@ -1352,7 +1470,6 @@ Se informado esse grupo o schema não permite informar nenhum dos grupos de ICMS
 										<xs:element name="gRessarc" minOccurs="0">
 											<xs:annotation>
 												<xs:documentation>Grupo de Informações detalhadas de item de cClass de Ressarcimento</xs:documentation>
-												<xs:documentation>Este grupo somente deverá ser preenchido quando houver processo judicial ou administrativo que altere valores.</xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
 												<xs:sequence>
@@ -1432,13 +1549,16 @@ Se informado esse grupo o schema não permite informar nenhum dos grupos de ICMS
 									<xs:attribute name="chNFComAnt" type="TChDFe">
 										<xs:annotation>
 											<xs:documentation>Chave de Acesso da NFCom anterior </xs:documentation>
-											<xs:documentation>Informar chave de acesso de referencia anterior</xs:documentation>
+											<xs:documentation>Informar chave de acesso de referencia anterior
+TAG OPCIONAL, DEVE SER INFORMADA APENAS NOS CASOS PREVISTOS DE NOTA ANTERIOR REFERENCIADA</xs:documentation>
 										</xs:annotation>
 									</xs:attribute>
 									<xs:attribute name="nItemAnt" use="optional">
 										<xs:annotation>
 											<xs:documentation>Número do item da NFCom anterior</xs:documentation>
-											<xs:documentation>Informar nro do item da chave de acesso de referencia anterior</xs:documentation>
+											<xs:documentation>Informar nro do item da chave de acesso de referencia anterior
+
+TAG OPCIONAL, DEVE SER INFORMADA APENAS NOS CASOS PREVISTOS DE NOTA ANTERIOR REFERENCIADA</xs:documentation>
 										</xs:annotation>
 										<xs:simpleType>
 											<xs:restriction base="xs:string">
@@ -1447,7 +1567,43 @@ Se informado esse grupo o schema não permite informar nenhum dos grupos de ICMS
 											</xs:restriction>
 										</xs:simpleType>
 									</xs:attribute>
+									<xs:attribute name="indNFComAntPapelFatCentral" use="optional">
+										<xs:annotation>
+											<xs:documentation>Indicador de Nota anterior em papel no faturamento centralizado</xs:documentation>
+											<xs:documentation>Informa que a NFCom Anterior de Faturamento centralizado não é eletrônica</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:whiteSpace value="preserve"/>
+												<xs:minLength value="1"/>
+												<xs:maxLength value="1"/>
+												<xs:enumeration value="1"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
 								</xs:complexType>
+							</xs:element>
+							<xs:element name="pgtoVinc" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Grupo de informações da vínculação com a transação de pagamento</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="pgto" type="TPagamentoRTC" maxOccurs="99">
+											<xs:annotation>
+												<xs:documentation>Dados de cada pagamento previsto</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+								<xs:unique name="pk_nPag">
+									<xs:selector xpath="./*"/>
+									<xs:field xpath="@nPag"/>
+								</xs:unique>
+								<xs:unique name="pk_idTransacao">
+									<xs:selector xpath="./*"/>
+									<xs:field xpath="@idTransacao"/>
+								</xs:unique>
 							</xs:element>
 							<xs:element name="total">
 								<xs:annotation>
@@ -1551,6 +1707,18 @@ Se informado esse grupo o schema não permite informar nenhum dos grupos de ICMS
 										<xs:element name="vNF" type="TDec_1302">
 											<xs:annotation>
 												<xs:documentation>Valor Total da NFCom</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="IBSCBSTot" type="TIBSCBSTot" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Totais de IBS e CBS</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="vTotDFe" type="TDec_1302" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Valor total do documento fiscal 
+(vNF + total do IBS + total da CBS) 
+</xs:documentation>
 											</xs:annotation>
 										</xs:element>
 									</xs:sequence>
@@ -1818,7 +1986,7 @@ Tabela do IBGE de código de unidades da federação.</xs:documentation>
 						</xs:annotation>
 						<xs:simpleType>
 							<xs:restriction base="xs:ID">
-								<xs:pattern value="NFCom[0-9]{44}"/>
+								<xs:pattern value="NFCom[0-9]{6}[A-Z0-9]{12}[0-9]{26}"/>
 							</xs:restriction>
 						</xs:simpleType>
 					</xs:attribute>
@@ -1843,7 +2011,7 @@ Tabela do IBGE de código de unidades da federação.</xs:documentation>
 									<xs:whiteSpace value="preserve"/>
 									<xs:minLength value="50"/>
 									<xs:maxLength value="1000"/>
-									<xs:pattern value="((HTTPS?|https?)://.*\?chNFCom=[0-9]{44}&amp;tpAmb=[1-2](&amp;sign=[!-ÿ]{1}[ -ÿ]{0,}[!-ÿ]{1}|[!-ÿ]{1})?)"/>
+									<xs:pattern value="((HTTPS?|https?)://.*\?chNFCom=[0-9]{6}[A-Z0-9]{12}[0-9]{26}&amp;tpAmb=[1-2](&amp;sign=[!-ÿ]{1}[ -ÿ]{0,}[!-ÿ]{1}|[!-ÿ]{1})?)"/>
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:element>
@@ -2541,7 +2709,7 @@ Observação: 28 caracteres são representados no schema como 20 bytes do tipo b
 		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:minLength value="1"/>
-			<xs:maxLength value="1"/>
+			<xs:maxLength value="2"/>
 			<xs:whiteSpace value="preserve"/>
 			<xs:enumeration value="1"/>
 			<xs:enumeration value="2"/>
@@ -2823,7 +2991,7 @@ Observação: 28 caracteres são representados no schema como 20 bytes do tipo b
 		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:minLength value="1"/>
-			<xs:maxLength value="1"/>
+			<xs:maxLength value="2"/>
 			<xs:whiteSpace value="preserve"/>
 			<xs:enumeration value="1"/>
 			<xs:enumeration value="2"/>
