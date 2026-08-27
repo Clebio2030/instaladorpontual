@@ -298,6 +298,19 @@ para tpEmis diferente de 1</xs:documentation>
 											<xs:documentation>Endereço do emitente</xs:documentation>
 										</xs:annotation>
 									</xs:element>
+									<xs:element name="ISUFEmit" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Inscrição do emitente da Suframa</xs:documentation>
+											<xs:documentation>Informar o número do Cadastro do emitente na Suframa. Campo obrigatório nas operações que se beneficiam de incentivos fiscais existentes nas áreas sob controle da SUFRAMA com alíquota zero da CBS referente aos arts. 451 e 466 da LC 214/25 </xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="8"/>
+												<xs:maxLength value="9"/>
+												<xs:whiteSpace value="preserve"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
@@ -806,10 +819,10 @@ Informar 0.00 em caso de passagem comercializada sem nenhum desconto</xs:documen
 													</xs:restriction>
 												</xs:simpleType>
 											</xs:element>
-											<xs:element name="vTotDFe" type="TDec_1302" minOccurs="0">
+											<xs:element name="vTotDFe" type="TDec_1302">
 												<xs:annotation>
 													<xs:documentation>Valor total do documento fiscal 
-(vBP - vDesconto + total do IBS + total da CBS) - vINSSRet </xs:documentation>
+vBP+ total do IBS + total da CBS</xs:documentation>
 												</xs:annotation>
 											</xs:element>
 										</xs:sequence>
@@ -998,6 +1011,28 @@ Informar 0.00 em caso de passagem comercializada sem nenhum desconto</xs:documen
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
+						<xs:element name="pgtoVinc" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Grupo de informações da vínculação com a transação de pagamento</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="pgto" type="TPagamentoRTC" maxOccurs="99">
+										<xs:annotation>
+											<xs:documentation>Dados de cada pagamento previsto</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+							<xs:unique name="pk_nPagTA">
+								<xs:selector xpath="./*"/>
+								<xs:field xpath="@nPag"/>
+							</xs:unique>
+							<xs:unique name="pk_idTransacaoTA">
+								<xs:selector xpath="./*"/>
+								<xs:field xpath="@idTransacao"/>
+							</xs:unique>
+						</xs:element>
 						<xs:element name="autXML" minOccurs="0" maxOccurs="10">
 							<xs:annotation>
 								<xs:documentation>Autorizados para download do XML do DF-e</xs:documentation>
@@ -1073,7 +1108,7 @@ Informar 0.00 em caso de passagem comercializada sem nenhum desconto</xs:documen
 						</xs:annotation>
 						<xs:simpleType>
 							<xs:restriction base="xs:ID">
-								<xs:pattern value="BPe[0-9]{44}"/>
+								<xs:pattern value="BPe[0-9]{6}[A-Z0-9]{12}[0-9]{26}"/>
 							</xs:restriction>
 						</xs:simpleType>
 					</xs:attribute>
@@ -1383,6 +1418,19 @@ para tpEmis diferente de 1</xs:documentation>
 											</xs:restriction>
 										</xs:simpleType>
 									</xs:element>
+									<xs:element name="ISUFEmit" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Inscrição do emitente da Suframa</xs:documentation>
+											<xs:documentation>Informar o número do Cadastro do emitente na Suframa. Campo obrigatório nas operações que se beneficiam de incentivos fiscais existentes nas áreas sob controle da SUFRAMA com alíquota zero da CBS referente aos arts. 451 e 466 da LC 214/25 </xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="8"/>
+												<xs:maxLength value="9"/>
+												<xs:whiteSpace value="preserve"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
@@ -1626,6 +1674,28 @@ para tpEmis diferente de 1</xs:documentation>
 									</xs:element>
 								</xs:sequence>
 							</xs:complexType>
+						</xs:element>
+						<xs:element name="pgtoVinc" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Grupo de informações da vínculação com a transação de pagamento</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="pgto" type="TPagamentoRTC" maxOccurs="99">
+										<xs:annotation>
+											<xs:documentation>Dados de cada pagamento previsto</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+							<xs:unique name="pk_nPagTM">
+								<xs:selector xpath="./*"/>
+								<xs:field xpath="@nPag"/>
+							</xs:unique>
+							<xs:unique name="pk_idTransacaoTM">
+								<xs:selector xpath="./*"/>
+								<xs:field xpath="@idTransacao"/>
+							</xs:unique>
 						</xs:element>
 						<xs:element name="autXML" minOccurs="0" maxOccurs="10">
 							<xs:annotation>
@@ -2017,6 +2087,19 @@ para tpEmis diferente de 1</xs:documentation>
 												<xs:whiteSpace value="preserve"/>
 												<xs:minLength value="1"/>
 												<xs:maxLength value="20"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="ISUFEmit" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Inscrição do emitente da Suframa</xs:documentation>
+											<xs:documentation>Informar o número do Cadastro do emitente na Suframa. Campo obrigatório nas operações que se beneficiam de incentivos fiscais existentes nas áreas sob controle da SUFRAMA com alíquota zero da CBS referente aos arts. 451 e 466 da LC 214/25 </xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="8"/>
+												<xs:maxLength value="9"/>
+												<xs:whiteSpace value="preserve"/>
 											</xs:restriction>
 										</xs:simpleType>
 									</xs:element>
@@ -2921,6 +3004,28 @@ Informar 0.00 em caso de passagem comercializada sem nenhum desconto</xs:documen
 									</xs:element>
 								</xs:sequence>
 							</xs:complexType>
+						</xs:element>
+						<xs:element name="pgtoVinc" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Grupo de informações da vínculação com a transação de pagamento</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="pgto" type="TPagamentoRTC" maxOccurs="99">
+										<xs:annotation>
+											<xs:documentation>Dados de cada pagamento previsto</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+							<xs:unique name="pk_nPag">
+								<xs:selector xpath="./*"/>
+								<xs:field xpath="@nPag"/>
+							</xs:unique>
+							<xs:unique name="pk_idTransacao">
+								<xs:selector xpath="./*"/>
+								<xs:field xpath="@idTransacao"/>
+							</xs:unique>
 						</xs:element>
 						<xs:element name="autXML" minOccurs="0" maxOccurs="10">
 							<xs:annotation>
