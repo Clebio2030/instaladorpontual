@@ -22,7 +22,7 @@ set "NETDIR=C:\Administracao"
 set "CFG_URL=https://raw.githubusercontent.com/Clebio2030/instaladorpontual/master/IDAPI32.CFG"
 REM Hash SHA256 do arquivo publicado. Deixe vazio para pular a
 REM verificacao (NAO recomendado).
-set "HASH_ESPERADO=6808cf9daa5c990e8277ee45812a9df4b9c7d78c742a0d49ab500ae3d4f5fb3d"
+set "HASH_ESPERADO=16cc354d48cc5ccbdf74b03b8c4960a40548d4751c14517c042adc9814303e2c"
 set "BACKUPDIR=C:\BDE_Backup"
 REM Processos que precisam estar fechados (separados por espaco)
 set "PROCESSOS=Automec.exe Climb.exe bdeadmin.exe"
