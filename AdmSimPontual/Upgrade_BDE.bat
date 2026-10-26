@@ -1,5 +1,6 @@
 @echo off
 setlocal EnableDelayedExpansion
+cd /d "%~dp0"
 
 REM ============================================================
 REM  CONFIG_BDE.BAT
@@ -36,14 +37,12 @@ echo.
 echo === Configuracao do BDE ===
 echo.
 
-REM ---------- 1. Verifica elevacao ----------------------------
+REM ---------- 1. Verifica elevacao (auto-eleva se necessario) -
 net session >nul 2>&1
 if errorlevel 1 (
-    echo [ERRO] Este script precisa ser executado como Administrador.
-    echo        Clique com o botao direito e escolha "Executar como administrador".
-    echo.
-    pause
-    exit /b 1
+    echo [..] Solicitando privilegios de administrador...
+    powershell -NoProfile -ExecutionPolicy Bypass -Command "Start-Process -FilePath '%~f0' -Verb RunAs"
+    exit /b
 )
 echo [OK] Executando com privilegios de administrador.
 
